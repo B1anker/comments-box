@@ -6,18 +6,17 @@ import ReactDOM from 'react-dom';
 import CommentList from './commentList';
 import CommentForm from './commentForm';
 
+
 const CommentBox = React.createClass({
-  render: function() {
+  render() {
     return (
       <div className="commentBox">
         <h1>Comments</h1>
-        <CommentList />
+        <CommentList data={this.props.data} />
         <CommentForm />
       </div>
     );
   }
 });
-
-ReactDOM.render(React.createElement(CommentBox, null), document.getElementById('app'));
 
 export default CommentBox;

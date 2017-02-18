@@ -30,7 +30,7 @@ module.exports = {
 				loader: 'url?limit=8000'
 			}, {
 				test: /\.json$/,
-				loader: 'json'
+				loader: 'json-loader'
 			}
 		]
 	},

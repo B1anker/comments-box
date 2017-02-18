@@ -7,5 +7,6 @@ import AppComponent from './components/commentBox.js';
 
 require('../node_modules/bootstrap/scss/bootstrap.scss');
 
+const data = require('./components/data.json');
 
-ReactDOM.render(<AppComponent />, document.getElementById('app'));
+ReactDOM.render(<AppComponent data={data}/>, document.querySelector('#app'));
