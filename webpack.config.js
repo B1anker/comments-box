@@ -4,6 +4,7 @@
 const path = require('path');
 const webpack = require('webpack');
 module.exports = {
+	devtool: 'eval-source-map',
 	entry: [
 		'webpack/hot/dev-server',
 		path.resolve(__dirname, './app/main.js')
@@ -21,10 +22,15 @@ module.exports = {
 				query: {
 					presets: ['es2015', 'react']
 				}
-			},
-			{
+			}, {
 				test: /\.scss$/,
-				loader: 'style-loader!css-loader!sass-loader',
+				loader: 'style-loader!css-loader!sass-loader'
+			}, {
+				test: /\.(jpg|png|gif|webp)$/,
+				loader: 'url?limit=8000'
+			}, {
+				test: /\.json$/,
+				loader: 'json'
 			}
 		]
 	},
