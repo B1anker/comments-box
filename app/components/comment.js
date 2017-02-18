@@ -10,7 +10,6 @@ const Comment = React.createClass({
 		return {__html: rawMarkup};
 	},
 	render() {
-		const md = new Remarkable();
 		return (
 			<div className="comment">
 				<h2 className="commentAuthor">
