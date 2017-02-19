@@ -1,14 +1,16 @@
 /**
  * Created by b1anker on 2017/02/17.
  */
-import React from 'react';
+import React, {Component} from 'react';
 import Remarkable from 'remarkable';
-const Comment = React.createClass({
+
+class Comment extends Component{
 	rawMakeup() {
 		const md = new Remarkable();
 		let rawMarkup = md.render(this.props.children.toString());
 		return {__html: rawMarkup};
-	},
+	}
+	
 	render() {
 		return (
 			<div className="comment">
@@ -19,6 +21,6 @@ const Comment = React.createClass({
 			</div>
 		);
 	}
-});
+}
 
 export default Comment;
