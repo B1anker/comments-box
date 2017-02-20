@@ -10,7 +10,7 @@ class CommentBox extends Component {
 	render() {
 		return (
 			<div className="commentBox">
-				<h1>Comments</h1>
+				<h1>Comments1</h1>
 				<CommentList data={this.props.data}/>
 				<CommentForm/>
 			</div>

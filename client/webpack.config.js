@@ -3,12 +3,13 @@
  */
 const path = require('path');
 const webpack = require('webpack');
+var publicPath = 'http://localhost:3000/';
+var hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
 module.exports = {
 	devtool: 'eval-source-map',
-	entry: [
-		'webpack/hot/dev-server',
-		path.resolve(__dirname, './app/main.js')
-	],
+	entry: {
+		'/': [path.resolve(__dirname, './src/main.js'), hotMiddlewareScript]
+	},
 	output: {
 		path: path.resolve(__dirname, './build'),
 		filename: 'bundle.js'
@@ -30,9 +31,9 @@ module.exports = {
 				loader: 'url?limit=8000'
 			}, {
 				test: /\.json$/,
-				loader: 'json-loader'
+				loader: 'json'
 			}
 		]
 	},
-	plugins: [new webpack.HotModuleReplacementPlugin()]
+	plugins: [new webpack.optimize.OccurenceOrderPlugin(), new webpack.HotModuleReplacementPlugin(), new webpack.NoErrorsPlugin()]
 };
