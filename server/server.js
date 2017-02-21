@@ -6,7 +6,7 @@ const app = express();
 const webpack = require('webpack'),
 	webpackDevMiddleware = require('webpack-dev-middleware'),
 	webpackHotMiddleware = require('webpack-hot-middleware'),
-	webpackDevConfig = require('./client/webpack.config.js');
+	webpackDevConfig = require('../client/webpack.config.js');
 
 const COMMENTS_FILE = path.join(__dirname, 'comments.json');
 

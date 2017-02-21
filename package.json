@@ -6,6 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "bundle": "babel-node tools/run bundle",
     "build": "webpack",
+		"server": "node server/server.js",
     "start": "cross-env NODE_ENV=dev supervisor -i client app",
     "dev": "webpack-dev-server --devtool eval --progress --colors --content-base build"
   },
