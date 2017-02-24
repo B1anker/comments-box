@@ -9,4 +9,4 @@ require('../../node_modules/bootstrap/scss/bootstrap.scss');
 
 const comments = require('../../comments.json');
 
-ReactDOM.render(<AppComponent data={comments} url="/api/comments"/>, document.querySelector('#app'));
+ReactDOM.render(<AppComponent data={comments} url="./api/comments"/>, document.querySelector('#app'));
