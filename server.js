@@ -6,7 +6,7 @@ const app = express();
 const webpack = require('webpack'),
 	webpackDevMiddleware = require('webpack-dev-middleware'),
 	webpackHotMiddleware = require('webpack-hot-middleware'),
-	webpackDevConfig = require('../client/webpack.config.js');
+	webpackDevConfig = require('./client/webpack.config.js');
 
 const COMMENTS_FILE = path.join(__dirname, 'comments.json');
 
@@ -39,7 +39,7 @@ app.use(function(req, res, next) {
 	next();
 });
 
-app.get('/api/comments', function(req, res) {
+app.get('./api/comments', function(req, res) {
 	fs.readFile(COMMENTS_FILE, function(err, data) {
 		if (err) {
 			console.error(err);
